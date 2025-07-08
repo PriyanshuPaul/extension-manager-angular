@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@1,700&display=swap');
+
+@theme {
+    --font-noto: "Noto Sans", sans-serif
+}
