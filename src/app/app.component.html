@@ -1,3 +1,8 @@
-<div [class]="theme + ' bg-white dark:bg-black h-screen p-4'">
-  <app-header />
+<div
+  [class]="
+    theme +
+    ' bg-gradient-to-b from-bg-light-100 to-bg-light-200 dark:from-bg-dark-100 dark:to-bg-dark-200 h-screen p-4 font-noto'
+  "
+>
+  <app-header (theme)="setTheme($event)" />
 </div>

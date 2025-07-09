@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
+import { Theme } from './app.constants';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent {
   title = 'extension-manager-angular';
-  theme = 'light';
-  
+  theme = Theme.light;
+  public setTheme(event: any) {
+    this.theme = event;
+  }
 }

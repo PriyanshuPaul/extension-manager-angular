@@ -1,8 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-    --font-noto: "Noto Sans", sans-serif
+    --font-noto: "Noto Sans", sans-serif;
+    --color-neutral-900: hsl(227, 75%, 14%);
+    --color-neutral-800: hsl(226, 25%, 17%);
+    --color-neutral700: hsl(225, 23%, 24%);
+    --color-neutral-600: hsl(226, 11%, 37%);
+    --color-neutral-300: hsl(0, 0%, 78%);
+    --color-neutral-200: hsl(217, 61%, 90%);
+    --color-neutral-100: hsl(0, 0%, 93%);
+    --color-neutral-50: hsl(200, 60%, 99%);
+    --color-red-400: hsl(3, 86%, 64%);
+    --color-red-500: hsl(3, 71%, 56%);
+    --color-red-700: hsl(3, 77%, 44%);
+    --color-bg-dark-100: #040918;
+    --color-bg-dark-200: #091540;
+    --color-bg-light-100: #EBF2FC;
+    --color-bg-light-200: #EEF8F9;
 }
