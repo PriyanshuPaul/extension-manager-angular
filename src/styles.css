@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant active (&:where(.active, .active *));
+@custom-variant dark-active (&:where(.dark.active, .dark.active *, .dark .active, .dark .active *));
 
 @theme {
     --font-noto: "Noto Sans", sans-serif;

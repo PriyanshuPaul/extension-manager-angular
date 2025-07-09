@@ -1,0 +1,13 @@
+<div class="flex flex-col mt-8 px-4">
+  <h1 class="font-bold text-3xl text-center dark:text-neutral-50">Extensions List</h1>
+  <div class="flex justify-between mt-4 font-medium">
+    @for(btn of buttons;track $index){
+    <button
+      class="active:bg-red-700 active:text-neutral-50 py-2 px-4 rounded-2xl bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-50 dark-active:bg-red-700 text-xl border-neutral-200 "
+      [class.active]="selectedIndex === $index" (click)="onPillBtnClick($index)">{{btn}}
+    </button>
+    }
+
+
+  </div>
+</div>
