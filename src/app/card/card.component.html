@@ -1,0 +1,23 @@
+<div
+    class=" bg-neutral-50 dark:bg-neutral-800 p-2 rounded-xl align-middle tracking-normal border-neutral-300 border-1 shadow-xl">
+    <div class="flex justify-between">
+        <img [src]="card.logo" alt="card-logo">
+        <section class="flex flex-col gap-0.5 ml-4 mt-2">
+            <h2 class="text-xl font-bold dark:text-neutral-50">{{card.name}}</h2>
+            <p class="font-light dark:text-neutral-100">{{card.description}}</p>
+        </section>
+    </div>
+    <section class="flex justify-between align-middle mt-4">
+        <button class="py-2 px-4 rounded-2xl bg-neutral-50 
+            dark:bg-neutral-800 dark:text-neutral-50 border-neutral-200 border-1">Remove</button>
+
+        <label for="check"
+            [class]="'relative w-10 h-5 rounded-full mt-2  transition-all duration-300'+ switchBackground">
+            <input id="check" type="checkbox" class="sr-only peer" [checked]="card.isActive"
+                (change)="onSwitchChange()">
+
+            <span
+                class="absolute bg-neutral-50 rounded-full w-4 h-4 top-0.5 left-0.5 peer-checked:left-5 transition-all duration-300"></span>
+        </label>
+    </section>
+</div>
