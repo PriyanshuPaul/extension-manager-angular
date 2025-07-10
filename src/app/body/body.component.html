@@ -1,19 +1,26 @@
-<main>
-  <section class="flex flex-col mt-8 px-4 leading-none tracking-tighter">
-    <h1 class="font-bold text-3xl text-center dark:text-neutral-50 ">Extensions List</h1>
-    <div class="flex justify-between mt-4 font-medium">
+<main class="mt-8 xl:mt-20">
+  <section
+    class="flex flex-col xl:flex-row xl:justify-between xl:align-middle px-4 xl:p-0 leading-none tracking-tighter">
+    <h1 class="font-bold text-4xl text-center dark:text-neutral-50 ">Extensions List</h1>
+    <div class="flex justify-between mt-4 xl:mt-0 font-medium xl:gap-4">
       @for(btn of buttons;track $index){
       <button class="active:bg-red-700 active:text-neutral-50 py-2 px-4 rounded-2xl 
               bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-50 shadow-xl
-              dark-active:bg-red-700 text-xl border-neutral-200 border-1" [class.active]="selectedIndex === $index"
-        (click)="onPillBtnClick($index)">{{btn}}
+              dark-active:bg-red-700 text-xl border-neutral-200 border-1 transition-all duration-300"
+        [class.active]="selectedIndex === $index" (click)="onPillBtnClick($index)">{{btn}}
       </button>
       }
 
 
     </div>
   </section>
-  <section class="mt-4">
-    <app-card [card]="card" (toggleSwitchClicked)="onToggleSwitchClick($event)"></app-card>
+  <section class="mt-4 xl:mt-10 xl:grid xl:grid-cols-3 gap-4">
+    @for(card of cardsVisible; track card.id){
+    <div class="mt-2 h-50 xl:h-50">
+      <app-card [card]="card" (toggleSwitchClicked)="onToggleSwitchClick($event)"
+        (removeBtnClicked)="removeCard($event)"></app-card>
+
+    </div>
+    }
   </section>
 </main>

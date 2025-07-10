@@ -10,7 +10,8 @@ import { ICard } from '../model/card.model';
 export class CardComponent implements OnInit {
 
   @Input() card!: ICard;
-  @Output() toggleSwitchClicked = new EventEmitter(false);
+  @Output() toggleSwitchClicked = new EventEmitter();
+  @Output() removeBtnClicked = new EventEmitter();
   switchBackground!: string;
 
   ngOnInit(): void {
@@ -25,6 +26,10 @@ export class CardComponent implements OnInit {
   onSwitchChange(): void {
     this.card.isActive = !this.card.isActive;
     this.setSwitchBackground();
-    this.toggleSwitchClicked.emit(this.card.isActive);
+    this.toggleSwitchClicked.emit(this.card.id);
+  }
+
+  onRemoveBtnClick() {
+    this.removeBtnClicked.emit(this.card.id)
   }
 }

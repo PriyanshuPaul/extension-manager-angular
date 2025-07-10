@@ -2,7 +2,7 @@
 
 ![Design preview for the Browser extensions manager UI coding challenge](./preview.jpg)
 
-This is a solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp).
 
 ## Table of contents
 
@@ -62,14 +62,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - [Angular](https://angular.dev/) - JS framework
 - [Tailwind css](https://tailwindcss.com/) - For styles
 
-
 ### What I learned
 
 Using tailwind css for dynamic theming and integrating with angular
 
 ```html
-    <button  [class.active]="selectedIndex === $index" (click)="onPillBtnClick($index)">{{btn}}/>
-
+<button [class.active]="selectedIndex === $index" (click)="onPillBtnClick($index)">{{btn}}/></button>
 ```
 
 ```css
@@ -83,7 +81,6 @@ const proudOfThisFunc = () => {
   console.log("🎉");
 };
 ```
-
 
 ### Continued development
 

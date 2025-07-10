@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { ICard } from '../model/card.model';
+import { mockExtensions } from '../model/mockExtensions';
 
 @Component({
   selector: 'app-body',
@@ -8,20 +9,46 @@ import { ICard } from '../model/card.model';
   imports: [CardComponent],
   templateUrl: './body.component.html',
 })
-export class BodyComponent {
+
+export class BodyComponent implements OnInit {
   buttons = ['All', 'Active', 'Inactive'];
-  card: ICard = {
-    "logo": "./assets/images/logo-devlens.svg",
-    "name": "DevLens",
-    "description": "Quickly inspect page layouts and visualize element boundaries.",
-    "isActive": true
+
+  selectedIndex: number = 0;
+  cards!: ICard[];
+  cardsVisible!: ICard[];
+
+  ngOnInit(): void {
+    this.cards = mockExtensions;
+    this.setCardData();
   }
-  selectedIndex: number = -1
+
   public onPillBtnClick(selectedIndex: any) {
-    this.selectedIndex = this.selectedIndex === selectedIndex ? -1 : selectedIndex;
-    console.log(selectedIndex)
+    this.selectedIndex = selectedIndex;
+    this.setCardData()
   }
-  onToggleSwitchClick(event: boolean) {
-    console.log(event);
+
+  public setCardData() {
+    switch (this.selectedIndex) {
+      case 1: this.cardsVisible = this.cards.filter((card) => card.isActive); break;
+      case 2: this.cardsVisible = this.cards.filter((card) => !card.isActive); break;
+      default: this.cardsVisible = this.cards; break;
+
+    }
+  }
+
+  onToggleSwitchClick(cardId: string) {
+    this.cards.map(card =>
+      card.id === cardId ? { ...card, isActive: !card.isActive } : card
+    )
+    setTimeout(() => {
+      this.setCardData();
+    }, 400);
+  }
+
+  removeCard(cardId: string) {
+    this.cards = this.cards.filter(card => card.id != cardId)
+    setTimeout(() => {
+      this.setCardData();
+    }, 400);
   }
 }
