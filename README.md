@@ -22,6 +22,8 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 
 ## Overview
 
+The Extension Dashboard is a responsive, dynamic web application built using Angular and Tailwind CSS, designed to showcase and manage a curated list of browser extensions. The interface allows users to seamlessly filter, view, and interact with extension cards in a modern, dark-mode friendly UI.
+
 ### The challenge
 
 Users should be able to:
@@ -37,14 +39,6 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
@@ -59,8 +53,9 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [Angular](https://angular.dev/) - JS framework
-- [Tailwind css](https://tailwindcss.com/) - For styles
+- Reactive Data Flow through immutable updates and proper tracking with trackBy
+- [Angular 17+](https://angular.dev/) - used standalone components and control flow syntax
+- [Tailwind css](https://tailwindcss.com/) - for utility-first, responsive styling
 
 ### What I learned
 
@@ -70,10 +65,11 @@ Using tailwind css for dynamic theming and integrating with angular
 <button [class.active]="selectedIndex === $index" (click)="onPillBtnClick($index)">{{btn}}/></button>
 ```
 
+setting dark active and active class for theming with Tailwind.
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+@custom-variant active (&:where(.active, .active *));
+@custom-variant dark-active (&:where(.dark.active, .dark.active *, .dark .active, .dark .active *));
 ```
 
 ```js
@@ -84,9 +80,15 @@ const proudOfThisFunc = () => {
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Future development of the Extension Dashboard will focus on enhancing interactivity, accessibility, and scalability. Key areas include:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- **Persistent State Management**: Store user changes locally or integrate with backend services for long-term state retention.
+- **Search and Tagging**: Implement search input and advanced filters to improve discoverability.
+- **Animations & Transitions**: Improve visual flow with Angular animations for card entry/removal.
+- **Unit & Integration Testing**: Expand test coverage to ensure stability and reliability.
+- **Backend Integration**: Prepare for API connectivity to support real-time data updates and centralized extension management.
+
+These improvements aim to evolve the project into a production-ready, extensible interface suitable for both local and cloud-based use cases.
 
 ### Useful resources
 
