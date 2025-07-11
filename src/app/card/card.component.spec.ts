@@ -10,14 +10,25 @@ describe('CardComponent', () => {
     await TestBed.configureTestingModule({
       imports: [CardComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
+    component.card = {
+      "logo": "./assets/images/logo-devlens.svg",
+      "name": "DevLens",
+      "description": "Quickly inspect page layouts and visualize element boundaries.",
+      "isActive": true,
+      "id": "1"
+    }
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    component.ngOnInit()
   });
+
+  it('should switch change', () => {
+    component.onSwitchChange()
+  })
 });

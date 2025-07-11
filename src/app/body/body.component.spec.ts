@@ -10,7 +10,7 @@ describe('BodyComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BodyComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BodyComponent);
     component = fixture.componentInstance;
@@ -20,4 +20,17 @@ describe('BodyComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should select data when active/inactive pills selected', () => {
+    component.onPillBtnClick(1)
+    component.onPillBtnClick(2)
+  })
+
+  it('should remove card when remove button clicked', () => {
+    component.removeCard("7")
+  })
+
+  it('should change pill status on switch clicked', () => {
+    component.onToggleSwitchClick("8")
+  })
 });
