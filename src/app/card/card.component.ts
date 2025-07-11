@@ -37,4 +37,9 @@ export class CardComponent implements OnInit {
   setFocusBackground() {
     this.focusBackground = ' border-2 border-red-600'
   }
+
+  removeFocusBackground() {
+    this.focusBackground = '';
+
+  }
 }

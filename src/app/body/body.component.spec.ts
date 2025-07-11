@@ -27,10 +27,10 @@ describe('BodyComponent', () => {
   })
 
   it('should remove card when remove button clicked', () => {
-    component.removeCard("7")
+    component.removeCard("c7")
   })
 
   it('should change pill status on switch clicked', () => {
-    component.onToggleSwitchClick("8")
+    component.onToggleSwitchClick("c8")
   })
 });

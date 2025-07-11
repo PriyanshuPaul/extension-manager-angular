@@ -14,8 +14,8 @@
 
         <label [for]="card.id"
             [class]="'relative w-10 h-5 rounded-full mt-2  transition-all duration-300 cursor-pointer'+ switchBackground + focusBackground">
-            <input [id]="card.id" type="checkbox" class="sr-only peer" [checked]="card.isActive"
-                (change)="onSwitchChange()" (focus)="setFocusBackground()">
+            <input [id]="card.id" type="checkbox" class="sr-only peer" [checked]="card.isActive" aria-label="checkbox"
+                (change)="onSwitchChange()" (focus)="setFocusBackground()" (blur)="removeFocusBackground()">
 
             <span
                 class="absolute bg-neutral-50 rounded-full w-4 h-4 top-0.5 left-0.5 peer-checked:left-5 transition-all duration-300"></span>
