@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/PriyanshuPaul/extension-manager-angular)
+- Live Site URL: [Add live site URL here](https://extension-manager-angular.netlify.app/)
 
 ## My process
 

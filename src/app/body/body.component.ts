@@ -47,8 +47,6 @@ export class BodyComponent implements OnInit {
 
   removeCard(cardId: string) {
     this.cards = this.cards.filter(card => card.id != cardId)
-    setTimeout(() => {
-      this.setCardData();
-    }, 400);
+    this.setCardData();
   }
 }

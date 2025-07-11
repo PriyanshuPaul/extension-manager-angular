@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Output() toggleSwitchClicked = new EventEmitter();
   @Output() removeBtnClicked = new EventEmitter();
   switchBackground!: string;
+  focusBackground: string = ''
 
   ngOnInit(): void {
     this.setSwitchBackground();
@@ -31,5 +32,9 @@ export class CardComponent implements OnInit {
 
   onRemoveBtnClick() {
     this.removeBtnClicked.emit(this.card.id)
+  }
+
+  setFocusBackground() {
+    this.focusBackground = ' border-2 border-red-600'
   }
 }
